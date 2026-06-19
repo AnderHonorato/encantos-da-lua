@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encantos da Lua — Tarô e Orientação Espiritual</title>
+<meta name="description" content="Consultas de Tarô e orientação espiritual online e presencial, conduzidas com escuta atenta e sigilo. Clareza para decisões de amor, carreira e propósito.">
+
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  /* Define o tema antes da primeira pintura, evitando flash de cor errada */
+  (function () {
+    var prefereClaro = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    document.documentElement.setAttribute('data-theme', prefereClaro ? 'light' : 'dark');
+  })();
+</script>
+</head>
+<body>
+
+<a href="#inicio" class="skip-link">Pular para o conteúdo</a>
+
+<!-- ====== HEADER ====== -->
+<header id="header-principal">
+    <div class="header-inner">
+        <a href="#inicio" class="marca">
+            <div class="lua-container">
+                <img src="assets/img/logo.png" alt="" width="40" height="40">
+            </div>
+            <span class="marca-nome">Encantos da Lua<em>Tarô &amp; Espiritualidade</em></span>
+        </a>
+
+        <nav id="nav-principal" aria-label="Navegação principal">
+            <a href="#inicio" class="ativo">Início</a>
+            <a href="#consultas">Consultas</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#" onclick="abrirModalContatos(event)">Contato</a>
+        </nav>
+
+        <div class="header-acoes">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar para tema claro" aria-pressed="false">
+                <span class="theme-toggle-thumb">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </span>
+            </button>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-principal">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ====== SCROLL DOTS ====== -->
+<nav class="scroll-dots" id="scroll-dots" aria-label="Navegação por seções">
+    <a href="#inicio" class="scroll-dot ativo" data-label="Início"></a>
+    <a href="#consultas" class="scroll-dot" data-label="Consultas"></a>
+    <a href="#sobre" class="scroll-dot" data-label="Sobre"></a>
+    <a href="#cta" class="scroll-dot" data-label="Contato"></a>
+    <button class="btn-voltar-topo" id="btn-voltar-topo" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</nav>
+
+<!-- ====== WHATSAPP FLUTUANTE ====== -->
+<a href="https://wa.me/5500000000000" class="wa-float-btn" id="wa-float-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<main class="conteudo">
+
+    <!-- ====== HERO ====== -->
+    <section id="inicio" class="hero">
+        <div class="hero-estrelas" aria-hidden="true" id="hero-estrelas"></div>
+        <div class="container hero-grid">
+            <div class="hero-texto">
+                <span class="eyebrow entrada entrada-1">Tarô &amp; Orientação Espiritual</span>
+                <h1 class="entrada entrada-2">Clareza para o seu caminho,<br>guiada pelas <span class="destaque-ouro">cartas</span></h1>
+                <p class="entrada entrada-3">
+                    Consultas individuais de Tarô para quem busca entender o presente, tomar decisões
+                    com mais segurança e reconectar-se com a própria intuição — com escuta atenta e
+                    total sigilo em cada etapa do atendimento.
+                </p>
+                <div class="hero-acoes entrada entrada-4">
+                    <a href="#" class="btn-primario" onclick="abrirModal('WhatsApp', 'Vamos conversar e agendar sua consulta personalizada.', 'https://wa.me/5500000000000', 'fa-brands fa-whatsapp'); return false;">
+                        <i class="fab fa-whatsapp"></i> Agendar Consulta
+                    </a>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" onclick="abrirModal('Instagram', 'Acompanhe postagens e conteúdos diários sobre tarô e espiritualidade.', 'https://instagram.com', 'fa-brands fa-instagram'); return false;" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" onclick="abrirModal('YouTube', 'Tiragens e orientações em vídeo.', 'https://youtube.com', 'fa-brands fa-youtube'); return false;" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" onclick="abrirModal('Telegram', 'Receba as energias do dia no nosso canal.', 'https://t.me/seugrupo', 'fa-brands fa-telegram'); return false;" title="Telegram" aria-label="Telegram">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-confianca entrada entrada-4">
+                    <span><i class="fa-solid fa-lock"></i> Atendimento sigiloso</span>
+                    <span><i class="fa-solid fa-globe"></i> 100% online e presencial</span>
+                    <span><i class="fa-solid fa-clock"></i> Resposta em até 24h</span>
+                </div>
+            </div>
+            <div class="hero-imagem entrada entrada-img">
+                <div class="moldura">
+                    <div class="moldura-glow" aria-hidden="true"></div>
+                    <img src="assets/img/main2.jpeg" alt="Ilustração mística de uma dançarina com leque, representando a identidade visual de Encantos da Lua" width="800" height="967">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONSULTAS ====== -->
+    <section id="consultas" class="servicos">
+        <div class="container">
+            <div class="secao-cabecalho revelar">
+                <span class="eyebrow">Áreas de Atendimento</span>
+                <h2>Leituras pensadas para cada momento da sua jornada</h2>
+                <div class="divisor-lua"><span></span><span></span><span></span><span></span><span></span></div>
+                <p>Cada consulta une a simbologia do Tarô a uma escuta cuidadosa do seu momento de vida,
+                   trazendo direção prática para decisões em amor, carreira e propósito.</p>
+            </div>
+
+            <div class="grid-consultas">
+                <article class="cartao-consulta revelar revelar-escala revelar-st1">
+                    <div class="moldura">
+                        <img src="assets/img/carta1.jpeg" alt="Carta O Eremita" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Autoconhecimento</span>
+                        <h3>Clareza Interior</h3>
+                        <p>Para momentos de introspecção e recomeço. Identifica bloqueios pouco visíveis e ilumina o próximo passo a ser dado.</p>
+                    </div>
+                </article>
+
+                <article class="cartao-consulta revelar revelar-escala revelar-st2">
+                    <div class="moldura">
+                        <img src="assets/img/carta2.jpeg" alt="Carta A Morte" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Transformação</span>
+                        <h3>Fechamento de Ciclos</h3>
+                        <p>Indicada para encerramentos e transições. Ajuda a processar o desapego e abrir espaço consciente para o que vem a seguir.</p>
+                    </div>
+                </article>
+
+                <article class="cartao-consulta revelar revelar-escala revelar-st3">
+                    <div class="moldura">
+                        <img src="assets/img/carta3.jpeg" alt="Carta de energia de Virgem" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Superação</span>
+                        <h3>Remoção de Obstáculos</h3>
+                        <p>Para quem enfrenta situações travadas ou recorrentes. Aponta o que está no caminho e direções concretas para seguir em frente.</p>
+                    </div>
+                </article>
+
+                <article class="cartao-consulta revelar revelar-escala revelar-st4">
+                    <div class="moldura">
+                        <img src="assets/img/carta4.jpeg" alt="Carta O Carro" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Carreira</span>
+                        <h3>Avanço e Conquistas</h3>
+                        <p>Impulsiona decisões profissionais e pessoais que estão paradas, indicando o momento certo para agir com confiança.</p>
+                    </div>
+                </article>
+
+                <article class="cartao-consulta revelar revelar-escala revelar-st5">
+                    <div class="moldura">
+                        <img src="assets/img/carta5.jpeg" alt="Carta de energia de Peixes" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Relacionamentos</span>
+                        <h3>Intuição e Conexão</h3>
+                        <p>Leitura voltada às relações afetivas, trazendo clareza sobre sentimentos, intenções e o que está por trás do não dito.</p>
+                    </div>
+                </article>
+
+                <article class="cartao-consulta revelar revelar-escala revelar-st6">
+                    <div class="moldura">
+                        <img src="assets/img/carta7.jpeg" alt="Carta O Rei de Ouros" loading="lazy" width="700" height="1050">
+                    </div>
+                    <div class="info-consulta">
+                        <span class="categoria-tag">Prosperidade</span>
+                        <h3>Estabilidade Financeira</h3>
+                        <p>Voltada para decisões financeiras e profissionais, trazendo direção para construir segurança material a longo prazo.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SOBRE ====== -->
+    <section id="sobre" class="sobre-pagina">
+        <div class="container sobre-grid">
+            <div class="perfil-col revelar revelar-esquerda">
+                <div class="moldura">
+                    <div class="moldura-glow" aria-hidden="true"></div>
+                    <img src="assets/img/perfil.jpeg" alt="Retrato de Bruno, fundador da Encantos da Lua" loading="lazy" width="600" height="900">
+                </div>
+                <div class="perfil-legenda">
+                    <strong>Bruno</strong>
+                    <span>Tarólogo &amp; Consultor Espiritual</span>
+                </div>
+            </div>
+
+            <div class="texto-col revelar revelar-direita">
+                <span class="eyebrow">Sobre Mim</span>
+                <h2>Uma jornada de queda, escuta e propósito</h2>
+
+                <p class="destaque-forte citacao">"Eu não nasci pronto. Fui moldado pelas quedas."</p>
+
+                <p>Passei por ciclos que me desconstruíram: términos que doeram fundo, perdas que silenciaram
+                   minha vontade de continuar e períodos de ansiedade em que levantar da cama já era uma
+                   vitória. Houve silêncio, dúvida e muitas perguntas sem resposta.</p>
+
+                <p>Foi exatamente ali, no fundo, que comecei a despertar.</p>
+
+                <p>A espiritualidade não chegou como fuga — chegou como reencontro. Aprendi que a dor também
+                   é iniciação, que o fim de um ciclo nem sempre é punição e que sensibilidade não é
+                   fraqueza: é dom.</p>
+
+                <div class="bloco-transformacao">
+                    <p>Aprendi a transformar abandono em <strong>autoconhecimento</strong>.</p>
+                    <p>Traição em <strong>discernimento</strong>.</p>
+                    <p>Silêncio em <strong>estratégia</strong>.</p>
+                    <p>E medo em <strong>força espiritual</strong>.</p>
+                </div>
+
+                <p>Meu caminho com as cartas não nasceu da curiosidade — nasceu da vivência. Hoje, quando
+                   leio para alguém, não entrego apenas previsões: entrego direção, consciência e clareza
+                   para decisões reais.</p>
+
+                <p>Hoje sou mais centrado, mais estratégico e mais conectado com a minha intuição. Não sou
+                   movido pelo desespero — sou guiado pela clareza.</p>
+
+                <div class="bloco-identidade">
+                    <p>Intensidade com propósito.</p>
+                    <p>Espiritualidade com responsabilidade.</p>
+                    <p>Intuição com firmeza.</p>
+                </div>
+
+                <p class="chamado-final">Se você chegou até aqui, talvez não seja coincidência.<br><strong>Talvez seja um chamado.</strong></p>
+
+                <div class="contatos-sobre">
+                    <h3>Fale comigo diretamente:</h3>
+                    <div class="redes-grid">
+                        <button class="btn-magico" onclick="abrirModal('WhatsApp', 'Olá! Clique abaixo para agendar sua consulta pelo WhatsApp.', 'https://wa.me/5500000000000', 'fa-brands fa-whatsapp')">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </button>
+                        <button class="btn-magico" onclick="abrirModal('Instagram', 'Siga-me no Instagram para conteúdos diários sobre tarô e espiritualidade.', 'https://instagram.com', 'fa-brands fa-instagram')">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </button>
+                        <button class="btn-magico" onclick="abrirModal('YouTube', 'Acompanhe tiragens e orientações em vídeo no YouTube.', 'https://youtube.com', 'fa-brands fa-youtube')">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </button>
+                        <button class="btn-magico" onclick="abrirModal('Telegram', 'Entre no canal do Telegram e receba conteúdos exclusivos.', 'https://t.me/seugrupo', 'fa-brands fa-telegram')">
+                            <i class="fab fa-telegram-plane"></i> Telegram
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA FINAL ====== -->
+    <section id="cta" class="cta-final">
+        <div class="container cta-final-conteudo revelar revelar-escala">
+            <span class="eyebrow">Dê o primeiro passo</span>
+            <h2>Pronto para enxergar com mais clareza?</h2>
+            <p>Agende sua consulta e descubra como o Tarô pode trazer direção para o que você está
+               vivendo agora — em um atendimento individual, sigiloso e conduzido com cuidado.</p>
+            <a href="#" class="btn-primario btn-primario-grande" onclick="abrirModal('WhatsApp', 'Vamos conversar e agendar sua consulta personalizada.', 'https://wa.me/5500000000000', 'fa-brands fa-whatsapp'); return false;">
+                <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+            <p class="cta-rodape">Resposta em até 24h · Atendimento 100% online e presencial/p>
+            <div class="cta-redes">
+                <span>ou me acompanhe em</span>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" onclick="abrirModal('Instagram', 'Acompanhe postagens e conteúdos diários sobre tarô e espiritualidade.', 'https://instagram.com', 'fa-brands fa-instagram'); return false;" title="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" onclick="abrirModal('YouTube', 'Tiragens e orientações em vídeo.', 'https://youtube.com', 'fa-brands fa-youtube'); return false;" title="YouTube" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-icon" onclick="abrirModal('Telegram', 'Receba as energias do dia no nosso canal.', 'https://t.me/seugrupo', 'fa-brands fa-telegram'); return false;" title="Telegram" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+    <div class="container footer-credits">
+        <p class="footer-copy">&copy; 2026 Encantos da Lua — Todos os direitos reservados.</p>
+
+        <div class="credit-divider">
+            <svg width="12" height="28" viewBox="0 0 12 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 2 C 10 10, 2 18, 6 26" stroke="rgba(196,163,90,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 4"/>
+            </svg>
+        </div>
+
+        <div class="dev-credit-wrapper">
+            <div class="dev-credit-main">
+                <div class="dev-blob-bg"></div>
+                <div class="dev-inner">
+                    <div class="dev-code-icon">
+                        <div class="lua-icone">
+                            <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="14" r="12" fill="none" stroke="var(--c-gold)" stroke-width="1.5"/>
+                                <path d="M14 5 C9 5, 5 9, 5 14 C5 19, 9 23, 14 23 C12 20, 12 8, 14 5Z" fill="var(--c-gold)" opacity="0.7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="dev-label">desenvolvido por</span>
+                    <span class="dev-name">Anderson Honorato</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ====== TRANSIÇÃO DE TEMA ====== -->
+<div class="theme-transition" id="theme-transition" aria-hidden="true"></div>
+
+<!-- ====== MODAIS ====== -->
+<div id="modal-overlay" class="modal-overlay" onclick="fecharModal(event)">
+    <div class="modal-carta" id="modal-carta" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <button class="btn-fechar" onclick="fecharModal(event)" aria-label="Fechar">&times;</button>
+        <div class="modal-conteudo">
+            <div class="modal-icone"><i id="modal-icone-i" class="fa-brands fa-whatsapp"></i></div>
+            <h3 id="modal-titulo">Rede Social</h3>
+            <p id="modal-texto">Mensagem descritiva.</p>
+            <a href="#" id="modal-link" target="_blank" rel="noopener" class="btn-acao-modal">Acessar</a>
+        </div>
+    </div>
+</div>
+
+<div id="modal-contatos" class="modal-overlay" onclick="fecharModalContatos(event)">
+    <div class="modal-carta" id="carta-contatos" role="dialog" aria-modal="true" aria-labelledby="modal-contatos-titulo">
+        <button class="btn-fechar" onclick="fecharModalContatos(event)" aria-label="Fechar">&times;</button>
+        <div class="modal-conteudo">
+            <div class="modal-icone"><i class="fa-solid fa-comments"></i></div>
+            <h3 id="modal-contatos-titulo">Meus Contatos</h3>
+            <p style="margin-bottom:20px;">Escolha o melhor canal para falarmos:</p>
+            <div class="modal-redes">
+                <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-magico"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="btn-magico"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="btn-magico"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://t.me/seugrupo" target="_blank" rel="noopener" class="btn-magico"><i class="fab fa-telegram-plane"></i> Telegram</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
