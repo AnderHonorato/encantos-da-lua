@@ -22,6 +22,21 @@
     document.documentElement.setAttribute('data-theme', prefereClaro ? 'light' : 'dark');
   })();
 </script>
+<style>
+/* Órbita lunar desenhada em CSS e sem imagens externas. */
+.ciclo-lunar-decorativo{display:flex;align-items:center;gap:11px;margin:22px 0 15px;width:max-content;max-width:100%;animation:lunar-aparecer 1.2s ease-out both}
+.fase-lua{display:block;width:23px;height:23px;position:relative;border-radius:50%;box-shadow:0 0 0 1px #c4a67877,0 0 19px #e9d6a922;transition:transform .4s}
+.fase-lua:hover{transform:translateY(-4px) scale(1.18)}
+.fase-lua.nova{background:radial-gradient(circle at 50% 50%,#292332,#342b40);box-shadow:0 0 0 1px #a68a6e}
+.fase-lua.crescente{background:#d7c6a3;overflow:hidden}
+.fase-lua.crescente::after{content:'';position:absolute;width:20px;height:24px;left:-9px;top:-1px;background:#2b2635;border-radius:50%}
+.fase-lua.cheia{background:radial-gradient(circle at 37% 37%,#e6d9ba,#ad9670);box-shadow:0 0 0 1px #cfb889,0 0 24px #d8b88777}
+.fase-lua.minguante{background:#d7c6a3;overflow:hidden}
+.fase-lua.minguante::after{content:'';position:absolute;width:20px;height:24px;right:-9px;top:-1px;background:#2b2635;border-radius:50%}
+.ligacao-lunar{display:block;width:26px;height:1px;background:linear-gradient(90deg,transparent,#b6996b,transparent)}
+@keyframes lunar-aparecer{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.ciclo-lunar-decorativo{animation:none}.fase-lua{transition:none}}
+</style>
 </head>
 <body>
 
@@ -88,7 +103,13 @@
                     com mais segurança e reconectar-se com a própria intuição — com escuta atenta e
                     total sigilo em cada etapa do atendimento.
                 </p>
-                <div class="hero-acoes entrada entrada-4">
+                <div class="ciclo-lunar-decorativo" aria-label="Ilustração das fases da Lua: nova, crescente, cheia e minguante" role="img">
+  <span class="fase-lua nova" aria-hidden="true"></span><span class="ligacao-lunar" aria-hidden="true"></span>
+  <span class="fase-lua crescente" aria-hidden="true"></span><span class="ligacao-lunar" aria-hidden="true"></span>
+  <span class="fase-lua cheia" aria-hidden="true"></span><span class="ligacao-lunar" aria-hidden="true"></span>
+  <span class="fase-lua minguante" aria-hidden="true"></span>
+</div>
+<div class="hero-acoes entrada entrada-4">
                     <a href="#" class="btn-primario" onclick="abrirModal('WhatsApp', 'Vamos conversar e agendar sua consulta personalizada.', 'https://wa.me/5500000000000', 'fa-brands fa-whatsapp'); return false;">
                         <i class="fab fa-whatsapp"></i> Agendar Consulta
                     </a>
